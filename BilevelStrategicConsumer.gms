@@ -1,5 +1,5 @@
 ********************************************************************************************************************************************************
-*                                                                 MPECj STRATEGIC CONSUMER                                                             *
+*                                                                 MPEC_z STRATEGIC CONSUMER                                                            *
 *************************************************************************************************-Developed by Joao Augusto Silva Ledo-*****************
 * This is a bilevel model (Stackelberg Game) which the upper-level embodies the strategic consumer and the lower-level the entire market clearing      *
 * that is replaced by 2 different optimality conditions:                                                                                               *
@@ -158,7 +158,7 @@ consumer_lowerboundary, consumer_upperboundary, Deriv_p, Deriv_d_S, Deriv_d_NS, 
 Dual_Positivity_mu_p_min, Dual_Positivity_mu_p_max, Dual_Positivity_mu_d_min, Dual_Positivity_mu_d_max/;
 
 ***************************************************************************
-*    SOLVING MPECj WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS KKT     *
+*    SOLVING MPEC_z WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS KKT     *
 ***************************************************************************
 
 * Turning ON and OFF vallues from subsets deppending on whose going to be strategic or not when running the code
@@ -183,7 +183,7 @@ display profit;
 display utility;
 
 ***************************************************************************
-*    SOLVING MPECj WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS PDOC    *
+*    SOLVING MPEC_z WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS PDOC    *
 ***************************************************************************
 
 * Turning ON and OFF vallues from subsets deppending on whose going to be strategic or not when running the code
