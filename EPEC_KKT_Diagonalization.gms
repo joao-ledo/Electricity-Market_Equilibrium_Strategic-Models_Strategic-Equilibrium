@@ -328,7 +328,7 @@ while((kk le 100) and (sum(i, sum(u $ UnitGeneratorConect(i, u), abs(o_previus(i
 * SWAP MOVE: SAVING THE PREVIUS NON-STRATEGIC BIDS ARRAY AND UPDATING THE NON-STRATEGIC ARRAY WITH THE CURRENT STRATEGIC OUTPUT ONLY INTO THE CURRENT STRATEGIC POSITION Z *
     b_previus(j, c) = b_aux(j, c);
     b_aux(z, c) = b.l(z, c);
-****************************************************************************************************************************************************************************** 
+****************************************************************************************************************************************************************************
 * POST EXECUTE *
     Cleared_Price = lambda.l;
     profit(i) = sum(u $ UnitGeneratorConect(i, u), p.l(i, u)*Cleared_Price) - sum(u $ UnitGeneratorConect(i, u), p.l(i, u)*cost(i, u));
