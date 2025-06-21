@@ -1,7 +1,10 @@
-***************************************************************************
-*                        KKT MARKET CLEARING (MCP)                        *
-***************************************************************************
-
+***************************************************************************************************************
+*                                              KKT MARKET CLEARING (MCP)                                      *
+*********************************************************************-Developed by Joao Augusto Silva Ledo-****
+* This code embodies two ways to solve the MCP version of the Market Clearing:                                *
+* 1. Solving the Market Clearing KKT MCP model as an Optimization Model by using a unitary Objective Function *
+* 2. Solving the Market Clearing KKT MCP through solver PATH                                                  *
+***************************************************************************************************************
 
 ***************************************************************************
 * SETS
@@ -13,7 +16,6 @@ Sets
     C Consumers' Demands /C1/
     UnitGeneratorConect(I, U) Connection between Producers and its units /I1.U1, I2.U2/
     UnitConsumerConect(J, C) Connection between Consumers and its demands /J1.C1/;
-    
 
 ***************************************************************************
 * DATA
