@@ -7,7 +7,7 @@
 * an approach called diagolalization                                                                                                                   *
 * NOTE 1. THE KEY POINT IN THIS CODE ARE THE SUBSETS OF STRATEGIC AND NON-STRATEGIC PRODUCERS AND CONSUMERS ITERATIVELY SOLVED                         *
 * NOTE 2. NOTICE THE SUBSETS DOESN'T DISTIGUISHES STRATEGICS FROM NON-STRATEGICS AGENTS AT ITS CREATION, BUT LATER ON BY                               *
-* TURNING ON AND OFF ITS VALUES IN A LOOP, DEPENDING ON THE STRATEGIC AGENT AND THE MODEL.                                                             *
+* TURNING ON AND OFF ITS VALUES IN A WHILE LOOP, DEPENDING ON THE STRATEGIC AGENT AND THE MODEL.                                                       *
 * NOTE 3. ALWAYS CREATE PARAMETERS, VARIABLES AND EQUATIONS USING SETS AND NOT SUBSETS, SINCE SUBSETS WILL CHANGE ITS VALUES ITERARIVELY. THEREFORE    *
 * USE THE SUBSETS TO DISTIGUISHES THE STRATEGIC AGENTS FROM THE NON-STRATEGIC ONES WHEN CREATING THE CONSTRAINTS ONLY!!                                *
 ********************************************************************************************************************************************************
