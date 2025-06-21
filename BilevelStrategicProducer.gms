@@ -159,6 +159,7 @@ Dual_Positivity_mu_p_min, Dual_Positivity_mu_p_max, Dual_Positivity_mu_d_min, Du
 ***************************************************************************
 *    SOLVING MPEC_y WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS KKT    *
 ***************************************************************************
+* Turning ON and OFF vallues from subsets deppending on whose going to be strategic or not when running the code
 Y('I1') = yes;
 Y('I2') = no;
 K('I1') = no;
@@ -183,6 +184,7 @@ display utility;
 ***************************************************************************
 *    SOLVING MPEC_y WHICH ITS LOWER-LEVEL HAS BEEN REPLACED BY ITS PDOC   *
 ***************************************************************************
+* Turning ON and OFF vallues from subsets deppending on whose going to be strategic or not when running the code
 Y('I1') = yes;
 Y('I2') = no;
 K('I1') = no;
