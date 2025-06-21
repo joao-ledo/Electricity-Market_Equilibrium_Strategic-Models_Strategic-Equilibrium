@@ -1,3 +1,9 @@
+****************************************************************************************************************************************************
+*                                                               MARKET CLEARING MODEL                                                              *
+*************************************************************************************************-Developed by Joao Augusto Silva Ledo-*************
+* This code encompasses covers a simple market clearing model coded in GAMS with focus on its coding strucutres such as its SETS and connections   *
+****************************************************************************************************************************************************
+
 Sets
     I Producer /I1, I2/
     J Consumers /J1/
