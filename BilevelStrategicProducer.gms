@@ -60,7 +60,7 @@ Positive Variables
     mu_d_max(j, c) dual variable associated to variable d upper bound constraint;
 
 Free Variable
-     OF Social welfare objective function variable;
+     OF objective function variable;
 
 
 ***************************************************************************
