@@ -1,6 +1,13 @@
-***************************************************************************
-*                    MARKET CLEARING SINGLE SCRIPT                        *
-***************************************************************************
+****************************************************************************************************************************************************
+*                                                        MARKET CLEARING SINGLE SCRIPT                                                             *
+*************************************************************************************************-Developed by Joao Augusto Silva Ledo-*************
+* This code encompasses 5 ways to solve the market clearing model                                                                                  *
+* 1. Primal Market Clearing Model                                                                                                                  *
+* 2. Dual Market Clearing Model                                                                                                                    *
+* 3. Solving the Market Clearing KKT MCP model as an Optimization Model by using a unitary Objective Function                                      *
+* 4. Solving the Market Clearing KKT MCP through solver PATH                                                                                       *
+* 5. Solving the Market Clearing PDOC (Primal-dual optimality conditions) MCP model as an Optimization Model by using a unitary Objective Function *
+****************************************************************************************************************************************************
 
 
 ***************************************************************************
