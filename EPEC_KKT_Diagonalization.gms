@@ -1,5 +1,5 @@
 ********************************************************************************************************************************************************
-*                                                                   EPEC KKT Diagonalization                                                           *
+*                                                                   EPEC KKT DIAGONALIZATION                                                           *
 *************************************************************************************************-Developed by Joao Augusto Silva Ledo-*****************
 * This is an EPEC model achieved by diagonalization of multiples strategic bilevel models in equilibrium where the upper-level embodies the            *
 * strategic producer or strategic consumer and theirs respetive lower-level embodies the entire market clearing model, therefore creating an           *
