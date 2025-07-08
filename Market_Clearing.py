@@ -1,4 +1,3 @@
-
 #******************************************************************************************************************************************************
 #*                                                                 MARKET CLEARING MODEL                                                              *
 #*************************************************************************************************-Developed by Joao Augusto Silva Ledo-**************
@@ -121,9 +120,9 @@ MarketClearingModel.max_utility = Param(MarketClearingModel.IU, initialize={
     (1, 1): 3,
 })  # Max utility per consumer for each consumer-demand pair
 
-MarketClearingModel.p_max =  Param(MarketClearingModel.I, initialize={1: 6, 2:6})
+MarketClearingModel.p_max =  Param(MarketClearingModel.IU, initialize={(1, 1): 6, (2, 2):6})
                                                         
-MarketClearingModel.d_max = Param(MarketClearingModel.J, initialize={1: 10})
+MarketClearingModel.d_max = Param(MarketClearingModel.JC, initialize={(1, 1): 10})
 
 MarketClearingModel.o = {(i, u): MarketClearingModel.Cost[i, u] for i, u in MarketClearingModel.IU}
 
@@ -136,8 +135,8 @@ MarketClearingModel.d = Var(MarketClearingModel.JC, within=NonNegativeReals)
 # Saving Model Input Data
 ModelInput = LoadInputData({(i, u): MarketClearingModel.Cost[i, u] for i, u in MarketClearingModel.IU},
                            {(j, c): MarketClearingModel.max_utility[j, c] for j, c in MarketClearingModel.JC},
-                           {i: MarketClearingModel.p_max[i] for i in MarketClearingModel.I},
-                           {j: MarketClearingModel.d_max[j] for j in MarketClearingModel.J}, 
+                           {(i, u): MarketClearingModel.p_max[i, u] for i, u in MarketClearingModel.IU},
+                           {(j, c): MarketClearingModel.d_max[j, c] for j, c in MarketClearingModel.JC}, 
                            {(i, u): MarketClearingModel.o[i, u] for i, u in MarketClearingModel.IU},
                            {(j, c): MarketClearingModel.b[j, c] for j, c in MarketClearingModel.JC})
 
@@ -158,7 +157,7 @@ MarketClearingModel.min_power_constraint = Constraint(MarketClearingModel.IU, ru
 
 # Max power limit constraint for each unit
 def max_power_constraint(model, i, u):
-    return model.p[i, u] <= model.p_max[i] # Max power for each unit
+    return model.p[i, u] <= model.p_max[i, u] # Max power for each unit
 MarketClearingModel.max_power_constraint = Constraint(MarketClearingModel.IU, rule=max_power_constraint)
 
 # Min power limit constraint for each unit
@@ -168,7 +167,7 @@ MarketClearingModel.min_demand_constraint = Constraint(MarketClearingModel.JC, r
 
 # Max power limit constraint for each unit
 def max_demand_constraint(model, j, c):
-    return model.d[j, c] <= model.d_max[j] # Max demand for each unit
+    return model.d[j, c] <= model.d_max[j, c] # Max demand for each unit
 MarketClearingModel.max_demand_rule = Constraint(MarketClearingModel.JC, rule=max_demand_constraint)
 
 # Add suffix for duals
