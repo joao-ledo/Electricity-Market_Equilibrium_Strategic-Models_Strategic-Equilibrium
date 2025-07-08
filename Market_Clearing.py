@@ -1,3 +1,4 @@
+
 #******************************************************************************************************************************************************
 #*                                                                 MARKET CLEARING MODEL                                                              *
 #*************************************************************************************************-Developed by Joao Augusto Silva Ledo-**************
@@ -36,7 +37,8 @@ class LoadInputData:  # method of the class accountable for creating its atribut
         return str(self.__dict__)
     
 class ReturnOutputSolution:  # method of the class accountable for creating its outputs
-    def __init__(self, p, d, Cleared_Price, profit, utility, SocialWelfare, Time, Solver_Name, Min_Max_Obj, Locally_or_NEOS_Server):
+    def __init__(self, Objective, p, d, Cleared_Price, profit, utility, SocialWelfare, Time, Solver_Name, Min_Max_Obj, Locally_or_NEOS_Server):
+        self.Objective = Objective
         self.p = p
         self.d = d
         self.Cleared_Price = Cleared_Price
@@ -72,7 +74,7 @@ def get_values_from_user_Solvers(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if (value >= 7) or (value <= 0):
+            if (value > 7) or (value <= 0):
                 print("\n PLEASE SELECT CARREFULLY! \n")
             else:
                 return value
@@ -211,12 +213,13 @@ else:
     elapsed_time_neos = end_time_neos - start_time_neos
 
 cleared_price = MarketClearingModel.dual.get(MarketClearingModel.Balance_Constraint)
-ModelOutput = ReturnOutputSolution({(i, u): MarketClearingModel.p[i, u].value for i, u in MarketClearingModel.IU},
+ModelOutput = ReturnOutputSolution(MarketClearingModel.Objective(),
+                                   {(i, u): MarketClearingModel.p[i, u].value for i, u in MarketClearingModel.IU},
                                    {(j, c): MarketClearingModel.d[j, c].value for j, c in MarketClearingModel.JC},
                                    cleared_price,
                                    sum(cleared_price * MarketClearingModel.p[i, u].value - MarketClearingModel.Cost[i, u] * MarketClearingModel.p[i, u].value for i, u in MarketClearingModel.IU),
                                    sum(MarketClearingModel.max_utility[j, c]*MarketClearingModel.d[j, c].value - cleared_price*MarketClearingModel.d[j, c].value for j, c in MarketClearingModel.JC),
-                                   MarketClearingModel.Objective(),
+                                   sum(cleared_price * MarketClearingModel.p[i, u].value - MarketClearingModel.Cost[i, u] * MarketClearingModel.p[i, u].value for i, u in MarketClearingModel.IU) + sum(MarketClearingModel.max_utility[j, c]*MarketClearingModel.d[j, c].value - cleared_price*MarketClearingModel.d[j, c].value for j, c in MarketClearingModel.JC),
                                    elapsed_time_neos,
                                    solver_name,
                                    MarketClearingModel.Objective.sense.name,
