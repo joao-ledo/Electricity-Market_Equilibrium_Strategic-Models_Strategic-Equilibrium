@@ -186,7 +186,7 @@ MarketClearingModel.max_demand_constraint = Constraint(MarketClearingModel.JC, r
 
 def deriv_p_constraint(model, i, u):
     return model.o[i, u] - model.Lambda - model.mu_p_min[i, u] + model.mu_p_max[i, u] == 0
-MarketClearingModel.deriv_p_constraint = Constraint(MarketClearingModel.JC, rule=deriv_p_constraint)
+MarketClearingModel.deriv_p_constraint = Constraint(MarketClearingModel.IU, rule=deriv_p_constraint)
 
 def deriv_d_constraint(model, j, c):
     return - model.b[j, c] + model.Lambda - model.mu_d_min[j, c] + model.mu_d_max[j, c] == 0
