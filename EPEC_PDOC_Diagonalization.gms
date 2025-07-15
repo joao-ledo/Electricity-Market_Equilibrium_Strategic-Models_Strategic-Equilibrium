@@ -3,7 +3,7 @@
 *************************************************************************************************-Developed by Joao Augusto Silva Ledo-*****************
 * This is an EPEC model achieved by diagonalization of multiples strategic bilevel models in equilibrium where the upper-level embodies the            *
 * strategic producer or strategic consumer and theirs respetive lower-level embodies the entire market clearing model, therefore creating an           *
-* Multi-leader-single-follower equilibrium. Each of the respetively lower-level models are replaced by its PDOC optimality conditions and solved by     *
+* Multi-leader-single-follower equilibrium. Each of the respetively lower-level models are replaced by its PDOC optimality conditions and solved by    *
 * an approach called diagolalization                                                                                                                   *
 * NOTE 1. THE KEY POINT IN THIS CODE ARE THE SUBSETS OF STRATEGIC AND NON-STRATEGIC PRODUCERS AND CONSUMERS ITERATIVELY SOLVED                         *
 * NOTE 2. NOTICE THE SUBSETS DOESN'T DISTIGUISHES STRATEGICS FROM NON-STRATEGICS AGENTS AT ITS CREATION, BUT LATER ON BY                               *
